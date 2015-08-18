@@ -1,0 +1,18 @@
+{
+	"Username": "Amon",	
+	"icon_emoji": ":amon:",
+	"channel": "#general",
+	"attachments": [
+	
+{
+	"fallback": "God blessed you!",
+	"color":"danger",
+	"fields" : [ {
+		"title" : "Event!",
+		"value":"Jai Radhekrishna\nJai Gurudev Bhagwan\nHari kare so khadi",
+		"short":false
+		}
+	]
+	}
+]
+}
