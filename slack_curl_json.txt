@@ -16,3 +16,6 @@
 	}
 ]
 }
+
+export slack = "your incoming webhook url here!"
+curl bash command : curl -H "Content-type:application/json" -X post -d @nameofyourfilecontainingabovecode.json $slack
