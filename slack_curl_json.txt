@@ -1,36 +1,6 @@
-{
-	"Username": "Amon",	
-	"icon_emoji": ":amon:",
-	"channel": "#general",
-	"attachments": [
-	
-{
-	"fallback": "God blessed you!",
-	"color":"danger",
-	"fields" : [ {
-		"title" : "Event!",
-		"value":"Jai Radhekrishna\nJai Gurudev Bhagwan\nHari kare so khadi",
-		"short":false
-		}
-	]
-	}
-]
-}
+{	"Username": "Amon",		"icon_emoji": ":amon:",	"channel": "#general",	"attachments": [	{	"fallback": "God blessed you!",	"color":"danger",	"fields" : [ {		"title" : "Event!",		"value":"Jai Radhekrishna\nJai Gurudev Bhagwan\nHari kare so khadi",		"short":false		}	]	}]}export slack = "your incoming webhook url here!"curl bash command : curl -H "Content-type:application/json" -X post -d @nameofyourfilecontainingabovecode.json $slack
+
 
-export slack = "your incoming webhook url here!"
-curl bash command : curl -H "Content-type:application/json" -X post -d @nameofyourfilecontainingabovecode.json $slack
+
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+

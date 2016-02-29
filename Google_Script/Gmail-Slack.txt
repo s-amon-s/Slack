@@ -1,0 +1,47 @@
+ 
+/* Credit: gist.github.com/andrewmwilson and labenol */
+/*      for educational purpose --AMON MISHRA--     */
+function sendEmailsToSlack() {
+    var label = GmailApp.getUserLabelByName('JRK_Slack');//your gmail label to be regularly filtered
+    var messages = [];
+    var threads = label.getThreads();
+  
+    for (var i = 0; i < threads.length; i++) {
+        messages = messages.concat(threads[i].getMessages())
+    }
+ 
+    for (var i = 0; i < messages.length; i++) {
+        var message = messages[i];
+        Logger.log(message);
+ 
+        var output = '*New Email*';
+        output += '\n*from:* ' + message.getFrom();
+        output += '\n*to:* ' + message.getTo();
+        output += '\n*cc:* ' + message.getCc();
+        output += '\n*date:* ' + message.getDate();
+        output += '\n*subject:* ' + message.getSubject();
+        output += '\n*body:* ' + message.getPlainBody();
+        Logger.log(output);
+ 
+        var payload = {
+            'username': 'gmail-bot',
+            'text': output,
+            'channel' : 'gmail_me',
+            'icon_emoji': ':amon:',
+        };
+ 
+        var options = {
+            'method' : 'post',
+            'payload' : Utilities.jsonStringify(payload),
+        };
+ 
+        // replace this with your own Slack webhook URL
+        // https://crowdscores.slack.com/services
+        var webhookUrl = 'https://hooks.slack.com/services/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';
+        UrlFetchApp.fetch(webhookUrl, options);
+   }
+ 
+   // remove the label from these threads so we don't send them to
+   // slack again next time the script is run
+   label.removeFromThreads(threads);
+}
